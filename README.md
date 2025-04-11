@@ -1,50 +1,88 @@
-#Foreground and Background Segmentation in an image udinf C++
 
-This project implements foreground-background segmentation on an image using the GrabCut algorithm in C++ with OpenCV. It isolates the object of interest (foreground) from the background, demonstrating an effective computer vision technique.
+# Image Segmentation using GrabCut Algorithm (C++ & OpenCV)
 
-📌 Problem Statement
-Write a C++ program to segment the foreground and background in an image using the GrabCut algorithm.
+This project demonstrates how to use the GrabCut algorithm in C++ with OpenCV to segment the foreground and background in an image.
 
-🧠 Algorithm Used
-GrabCut: An iterative graph-based image segmentation technique.
+---
 
-Uses Graph Cuts to optimize segmentation.
+## 🧠 Overview
 
-Requires an initial bounding box to define the region of interest (ROI).
+The GrabCut algorithm is an efficient method for foreground-background segmentation in images. This C++ program:
+- Loads an input image
+- Defines a rectangular Region of Interest (ROI)
+- Applies the GrabCut algorithm to distinguish foreground from background
+- Saves and displays the segmented foreground and background images
 
-Iteratively refines foreground and background using Gaussian Mixture Models (GMMs).
+---
 
-✅ Output
-Original Image
+## 🧰 Dependencies
 
-Extracted Foreground
+Make sure the following dependencies are installed:
 
-Extracted Background
+- OpenCV (version 3.0 or above)
+- C++ compiler (like g++, clang)
+- CMake (if building using CMakeLists)
 
-Foreground is displayed with a black background to highlight segmentation.
+---
 
-📂 Project Structure
-ImageSegmentation/
-│
-├── grabcut_segmentation.cpp       # Main C++ source code
-├── banana.jpg                     # Sample input image
-├── README.md                      # Documentation
-└── CMakeLists.txt (optional)      # CMake build config
-🔧 Dependencies
-OpenCV 4.x or later
+## 📁 File Structure
 
-C++11 or later compiler
+```
+├── main.cpp                   # Main source code
+├── image-asset.jpeg           # Input image file
+├── foreground_output.jpg      # Output image with only foreground
+├── background_output.jpg      # Output image with only background
+├── GrabCut_Output_Summary.txt # Output summary (optional)
+```
 
-⚙️ Build & Run Instructions
-🔨 Using g++ (Linux/macOS)
+---
 
-g++ grabcut_segmentation.cpp -o segment `pkg-config --cflags --libs opencv4`
+## ▶️ How to Run
+
+### 1. Compile the Program
+
+Use the following command in terminal (Linux/Mac) or CMD (Windows):
+
+```
+g++ main.cpp -o segment `pkg-config --cflags --libs opencv4`
+```
+
+> If you're using OpenCV 3, use `opencv` instead of `opencv4`.
+
+### 2. Run the Program
+
+```
 ./segment
-🪟 Using Visual Studio (Windows)
-Include OpenCV headers and link .lib files.
+```
 
-Add OpenCV DLLs to the environment path.
+Make sure that `image-asset.jpeg` is present in the same directory as the executable.
 
-Build and run the project.
+---
+
+## 🖼️ Output Summary
+
+After running the program, three windows will open:
+- Original Image
+- Foreground Only
+- Background Only
+
+Additionally, two image files are saved:
+- `foreground_output.jpg` — Only the segmented object is shown (black background)
+- `background_output.jpg` — Background shown without the main object
+
+---
+
+## 📌 Notes
+
+- You can change the rectangle dimensions in the code to better fit the object in your image.
+- This is a basic implementation for demonstration purposes and can be extended for use with user-defined masks or touch-based input for better accuracy.
+
+---
+
+## 👨‍💻 Author
+
+Developed by: Sandeep Udbal 
+Department of Electronics & Communication  
+AMC Engineering College
 
 
