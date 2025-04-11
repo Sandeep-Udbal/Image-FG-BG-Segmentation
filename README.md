@@ -111,5 +111,5 @@ Saved as: background_output.jpg
 
 📁 Files Generated
 File Name	Description
-foreground_output.jpg	#Shows only the segmented object
-background_output.jpg	#Shows only the background portion
+foreground_output.jpg	Shows only the segmented object
+background_output.jpg	Shows only the background portion
