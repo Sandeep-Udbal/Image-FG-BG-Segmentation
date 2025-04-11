@@ -28,11 +28,10 @@ Make sure the following dependencies are installed:
 ## 📁 File Structure
 
 ```
-├── main.cpp                   # Main source code
-├── image-asset.jpeg           # Input image file
+├── segmentation.cpp                   # Main source code
+├── test.jpeg           # Input image file
 ├── foreground_output.jpg      # Output image with only foreground
 ├── background_output.jpg      # Output image with only background
-├── GrabCut_Output_Summary.txt # Output summary (optional)
 ```
 
 ---
@@ -44,7 +43,8 @@ Make sure the following dependencies are installed:
 Use the following command in terminal (Linux/Mac) or CMD (Windows):
 
 ```
-g++ main.cpp -o segment `pkg-config --cflags --libs opencv4`
+g++ segmentation.cpp -o segmentation -I"C:\Desktop\opencv\build\include" -L"C:\Desktop\opencv\build\x64\vc16\lib" -lopencv_core -lopencv_imgcodecs -lopencv_highgui -lopencv_imgproc
+
 ```
 
 > If you're using OpenCV 3, use `opencv` instead of `opencv4`.
@@ -52,10 +52,10 @@ g++ main.cpp -o segment `pkg-config --cflags --libs opencv4`
 ### 2. Run the Program
 
 ```
-./segment
+./segmentation
 ```
 
-Make sure that `image-asset.jpeg` is present in the same directory as the executable.
+Make sure that `test.jpeg` is present in the same directory as the executable.
 
 ---
 
