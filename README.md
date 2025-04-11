@@ -74,3 +74,42 @@ Run grabCut() to segment.
 Create binary masks.
 
 Extract and display foreground/background.
+
+ 1. Using g++ (MinGW) via CMD
+🔨 Compilation Command:
+
+g++ segmentation.cpp -o segment -IC:\opencv\build\include -LC:\opencv\build\x64\vc15\lib -lopencv_world480
+
+🔄 Make sure:
+
+Replace 480 with your OpenCV version (opencv_world4xx.lib).
+
+Adjust the OpenCV path to your actual installation path.
+
+✅ Output Summary
+The program performs foreground-background segmentation on a given image using OpenCV's grabCut() function. After execution, it generates and displays three windows:
+
+🖼️ Original Image
+
+The input image as it was loaded.
+
+🌟 Foreground Only
+
+The main object (e.g., banana, person, etc.) is extracted from the image.
+
+Background pixels are set to black (Scalar(0,0,0)).
+
+Saved as: foreground_output.jpg
+
+🪵 Background Only
+
+All background pixels are retained, while the foreground is removed.
+
+Foreground region appears blacked out.
+
+Saved as: background_output.jpg
+
+📁 Files Generated
+File Name	Description
+foreground_output.jpg	#Shows only the segmented object
+background_output.jpg	#Shows only the background portion
