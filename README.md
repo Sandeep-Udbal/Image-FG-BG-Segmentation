@@ -81,8 +81,8 @@ Additionally, two image files are saved:
 
 ## 👨‍💻 Author
 
-Developed by: Sandeep Udbal 
-Department of Electronics & Communication  
-AMC Engineering College
+- Developed by: Sandeep Udbal 
+- Department of Electronics & Communication  
+- AMC Engineering College
 
 
